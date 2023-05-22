@@ -1,0 +1,63 @@
+.BookingDetails__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 100px 0;
+}
+
+.BookingDetails-details {
+  margin-bottom: 100px;
+  display: flex;
+  flex: 1 0 250px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.BookingDetails-details h3 {
+  font-size: 16px;
+}
+
+.guest-booking {
+  max-width: 350px;
+  max-height: 532px;
+}
+
+.guest-data-form {
+  display: flex;
+  flex: 1 0 100%;
+  min-height: 300px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: last baseline;
+}
+
+.guest-data-form input {
+  margin: 8px 0 0 24px;
+  justify-self: flex-end;
+  width: 300px;
+}
+
+.guest-data-form label{
+	display: flex;
+	flex-direction: column;
+	align-items: first baseline;
+}
+
+.guest-data-form button {
+	align-self: center;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  color: #fcfdfe;
+  padding: 14px 30px;
+  border-radius: 5px;
+  background-color: #201a1b;
+}
+
+.guest-data-form button:hover {
+  color: white;
+  background-color: #7e3e30;
+}

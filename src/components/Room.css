@@ -1,0 +1,253 @@
+.Room-card {
+  border: solid 0.5px #242424;
+  margin: 0 0 200px 0;
+  max-width: 780px;
+  max-height: 1136px;
+  display: flex;
+  flex-shrink: 0 1 auto;
+  flex-direction: column;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.card-header {
+  padding: 10px 20px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: start;
+  letter-spacing: normal;
+  color: white;
+  background-color: #242424;
+}
+
+/*------------------------------------------------------------------------------*/
+
+/*tablet*/
+@media (max-width: 710px) {
+  .Room-card {
+    max-width: 632px;
+  }
+
+  .card-rate {
+    flex-direction: column;
+  }
+
+  .card-rate-img-and-button {
+    margin: 0 0 40px 0;
+  }
+  .header-and-text-text-with-icon {
+    margin: 0 0 40px 0;
+  }
+
+  #price {
+    align-items: flex-start;
+    text-align: start;
+  }
+  #priceBtn {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 631px) {
+  .Room-card {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 499px) {
+  .Room-card {
+    max-width: 421px;
+  }
+
+  .card-more-info button {
+    margin: 16px 0 0 0;
+  }
+
+  .clarify-info-icons:last-child {
+    margin: 0 0 16px 0;
+  }
+}
+
+/*mobile*/
+@media (max-width: 420px) {
+  .Room-card {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 399px) {
+  .Room-card {
+    max-width: 359px;
+  }
+}
+
+/*------------------------------------------------------------------------------*/
+
+.card-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-img button {
+  position: absolute;
+  padding: 15px 20px;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 21px;
+  background-color: #242424;
+  color: white;
+  align-self: self-end;
+}
+
+.card-img button:hover {
+  background-color: #7e3e30;
+  color: white;
+}
+
+/*------------------------------------------------------------------------------*/
+
+.card-more-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #f5f5f5;
+  flex-wrap: wrap;
+}
+
+.card-more-info button {
+  font-size: 14px;
+  color: #bca5a5;
+  background-color: #f5f5f5;
+}
+
+.card-more-info button:hover {
+  text-decoration: underline;
+}
+
+.more-info-detail {
+  display: flex;
+  align-items: center;
+}
+
+/*------------------------------------------------------------------------------*/
+
+.card-clarify {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.clarify-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clarify-info-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.clarify-info-icons :first-child {
+  margin: 0 0 16px 0;
+}
+
+.clarify-info-adults-icons,
+.clarify-info-beds {
+  display: flex;
+  align-items: center;
+}
+
+.card-clarify-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-clarify-content h3 {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: normal;
+}
+
+/*------------------------------------------------------------------------------*/
+
+.card-rate {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.card-rate-img-and-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-rate-img-and-button img {
+  flex: 0 1 auto;
+  max-width: 200px;
+  max-height: 156px;
+  margin: 0 0 16px 0;
+}
+
+.card-rate-img-and-button button {
+  text-align: start;
+  font-size: 14px;
+  color: #bca5a5;
+  background-color: #f5f5f5;
+}
+
+.card-rate-img-and-button button:hover {
+  text-decoration: underline;
+}
+.card-rate-header-and-text h3 {
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+}
+
+.header-and-text-text-with-icon {
+  display: flex;
+  font-size: 13px;
+  color: #888888;
+}
+.total-price {
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.total-price h2 {
+  font-size: 20px;
+  margin: 0 0 16px 0;
+}
+.total-price h4 {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: black;
+}
+
+.total-price button {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  flex: 0 0 auto;
+  padding: 4px 16px;
+  color: white;
+  background-color: black;
+  border: solid black;
+  border-radius: 8px;
+  height: 44px;
+  align-self: flex-end;
+}
+
+.total-price button:hover {
+  color: white;
+  background-color: #7e3e30;
+  border: solid #7e3e30;
+  border-radius: 8px;
+}
