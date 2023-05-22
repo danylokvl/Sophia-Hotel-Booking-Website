@@ -20,7 +20,7 @@ function App() {
       <main className="main">
         <h1>Sophia Hotel Booking</h1>
         <section className="Inputs">
-          <Inputs setShowRooms={setShowRooms} range={range} setRange={setRange} data={data} setData={setData}/>
+          <Inputs  showRooms={showRooms} setShowRooms={setShowRooms} range={range} setRange={setRange} data={data} setData={setData}/>
         </section>
         {showRooms && (
           <section className="Rooms">

@@ -1,23 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Inputs.css';
 
 import DateRangePicker from './DateRangePicker';
 
-const Inputs = ({ setShowRooms, range, setRange, data, setData }) => {
-
+const Inputs = ({ showRooms, setShowRooms, range, setRange, data, setData }) => {
   function handleFormSubmit(event) {
-  /*  const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ data: data, range: range }),
-    };
-    fetch('http://62.171.156.155/danylo_ko/api/api.py', requestOptions)
-	 .then((response) => response.json()
-    );*/
-
     event.preventDefault();
     setShowRooms(true);
   }
+
+  useEffect(() => {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: data, range: range, type: 'get_rooms' }),
+    };
+
+    async function fetchRoomsDetails() {
+      const response = await fetch('http://62.171.156.155/danylo_ko/api/api.py', requestOptions);
+      const roomsDetails = await response.json();
+      console.log(roomsDetails);
+    }
+    fetchRoomsDetails();
+
+    return () => {};
+  }, [showRooms]);
 
   return (
     <div className="Inputs__container">
