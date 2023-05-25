@@ -5,7 +5,12 @@ import { BsFillPersonFill } from 'react-icons/bs';
 import { TbArrowsHorizontal } from 'react-icons/tb';
 
 const Room = ({ setShowBookingDetails, room }) => {
-
+  const OnClickHandler = () => {
+    setShowBookingDetails(true);
+		
+    const element = document.getElementById('BookingDetails');
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="Room-card">
@@ -71,7 +76,7 @@ const Room = ({ setShowBookingDetails, room }) => {
         <div className="total-price" id="price">
           <h4>Загальна вартість 1 ночі</h4>
           <h2>{`${room.price} грн`}</h2>
-          <button id="priceBtn" onClick={() => setShowBookingDetails(true)}>
+          <button id="priceBtn" onClick={OnClickHandler}>
             Уточніть заселення
           </button>
         </div>

@@ -5,19 +5,9 @@ import { useState } from 'react';
 const BookingDetails = ({ range, data }) => {
   const [guestContacts, setGuestContacts] = useState({ name: '', surname: '', number: '' });
 
-const handleFormSubmit  = (event) => {
-    /*
-	const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ data: data, range: range, guestContacts:guestContacts }),
-    };
-    fetch('http://62.171.156.155/danylo_ko/api/api.py', requestOptions)
-	 .then((response) => response.json());
-	 */
-
+  const handleFormSubmit = (event) => {
     alert('Бронювання пройшло успішно');
-  }
+  };
 
   return (
     <div className="BookingDetails__container">

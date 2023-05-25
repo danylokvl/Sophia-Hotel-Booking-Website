@@ -15,6 +15,11 @@ function App() {
     children: 0,
   });
 
+  useEffect(() => {
+    const element = document.getElementById('BookingDetails');
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  }, [showBookingDetails]);
+
   return (
     <div className="App">
       <main className="main">
@@ -27,16 +32,16 @@ function App() {
             setRange={setRange}
             data={data}
             setData={setData}
-				setRoomsData={setRoomsData}
+            setRoomsData={setRoomsData}
           />
         </section>
         {showRooms && (
           <section className="Rooms">
-            <Rooms setShowBookingDetails={setShowBookingDetails} roomsData={roomsData}/>
+            <Rooms setShowBookingDetails={setShowBookingDetails} roomsData={roomsData} />
           </section>
         )}
         {showBookingDetails && (
-          <section className="BookingDetails">
+          <section className="BookingDetails" id="BookingDetails">
             <BookingDetails range={range} data={data} />
           </section>
         )}
