@@ -2,11 +2,30 @@ import React from 'react';
 import './BookingDetails.css';
 import { useState } from 'react';
 
-const BookingDetails = ({ range, data }) => {
+const BookingDetails = ({ range, chosenRoom, data }) => {
   const [guestContacts, setGuestContacts] = useState({ name: '', surname: '', number: '' });
 
   const handleFormSubmit = (event) => {
-    alert('Бронювання пройшло успішно');
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'set_booking',
+        range: range,
+        roomId: chosenRoom,
+        data: data,
+        guestContacts: guestContacts,
+      }),
+    };
+    async function Booking() {
+      const response = await fetch('http://62.171.156.155/danylo_ko/api/api.py', requestOptions);
+      const bookingData = await response.json();
+      if (bookingData.error) {
+        alert('Не вдалося забронювати номер. Перевірте правильність введених даних.');
+      } else alert('Бронювання пройшло успішно');
+    }
+    Booking();
+    event.preventDefault();
   };
 
   return (
@@ -18,7 +37,9 @@ const BookingDetails = ({ range, data }) => {
         <h3 style={{ fontWeight: 'bold' }}> Дата Від'їзду</h3>
         <h3>{range[1].format('DD.MM.YYYY').toString()}</h3>
         <h3 style={{ fontWeight: 'bold' }}> Ваша Кімната</h3>
-        <h3> Sophia Room </h3>
+        <h3>
+          {chosenRoom === 1 ? 'Cozy Room' : chosenRoom === 2 ? 'Sophia Room' : 'Kyiv Corner Room'}
+        </h3>
       </div>
       <h2 style={{ textAlign: 'center', marginBottom: '24px' }}>Підтвердіть ваші дані</h2>
       <form className="guest-data-form" onSubmit={handleFormSubmit}>

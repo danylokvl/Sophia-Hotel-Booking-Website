@@ -4,10 +4,10 @@ import { FaBed } from 'react-icons/fa';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { TbArrowsHorizontal } from 'react-icons/tb';
 
-const Room = ({ setShowBookingDetails, room }) => {
+const Room = ({ setShowBookingDetails, setChosenRoom, room}) => {
   const OnClickHandler = () => {
     setShowBookingDetails(true);
-		
+	 setChosenRoom(room.id);	
     const element = document.getElementById('BookingDetails');
     if (element) element.scrollIntoView({ behavior: 'smooth' });
   };

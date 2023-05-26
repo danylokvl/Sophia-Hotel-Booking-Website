@@ -32,19 +32,21 @@
 }
 
 .guest-data-form input {
-  margin: 8px 0 0 24px;
+  margin: 0 0 0 24px;
   justify-self: flex-end;
   width: 300px;
 }
 
-.guest-data-form label{
-	display: flex;
-	flex-direction: column;
-	align-items: first baseline;
+.guest-data-form label {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
 }
 
 .guest-data-form button {
-	align-self: center;
+  margin-top: 50px;
+  align-self: center;
   display: inline-block;
   text-transform: uppercase;
   font-weight: 800;

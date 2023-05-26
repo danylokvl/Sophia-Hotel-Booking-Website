@@ -10,9 +10,10 @@ function App() {
   const [showRooms, setShowRooms] = useState(false);
   const [showBookingDetails, setShowBookingDetails] = useState(false);
   const [range, setRange] = useState([moment(), moment().add(1, 'day')]);
+  const [chosenRoom, setChosenRoom] = useState(0);
   const [data, setData] = useState({
     adults: 2,
-    children: 0,
+    children: 0,	 
   });
 
   useEffect(() => {
@@ -37,12 +38,12 @@ function App() {
         </section>
         {showRooms && (
           <section className="Rooms">
-            <Rooms setShowBookingDetails={setShowBookingDetails} roomsData={roomsData} />
+            <Rooms setShowBookingDetails={setShowBookingDetails} roomsData={roomsData} setChosenRoom={setChosenRoom} />
           </section>
         )}
         {showBookingDetails && (
           <section className="BookingDetails" id="BookingDetails">
-            <BookingDetails range={range} data={data} />
+            <BookingDetails range={range} data={data} chosenRoom={chosenRoom}/>
           </section>
         )}
       </main>

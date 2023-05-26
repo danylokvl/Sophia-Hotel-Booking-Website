@@ -3,8 +3,10 @@ import './Inputs.css';
 
 import DateRangePicker from './DateRangePicker';
 
-const Inputs = ({ setRoomsData, setShowRooms, range, setRange, data, setData }) => {
+const Inputs = ({ setRoomsData, setShowRooms, showRooms, range, setRange, data, setData }) => {
   function handleFormSubmit(event) {
+    if (showRooms === true) setShowRooms(false);
+
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -15,7 +17,7 @@ const Inputs = ({ setRoomsData, setShowRooms, range, setRange, data, setData }) 
       const response = await fetch('http://62.171.156.155/danylo_ko/api/api.py', requestOptions);
       const roomsDetails = await response.json();
       await setRoomsData(roomsDetails);
-		setShowRooms(true);
+      setShowRooms(true);
     }
     fetchRoomsDetails();
     event.preventDefault();
