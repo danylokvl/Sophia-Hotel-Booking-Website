@@ -14,7 +14,7 @@ const Inputs = ({ setRoomsData, setShowRooms, showRooms, range, setRange, data, 
     };
 
     async function fetchRoomsDetails() {
-      const response = await fetch('http://62.171.156.155/danylo_ko/api/api.py', requestOptions);
+      const response = await fetch('link.com', requestOptions);
       const roomsDetails = await response.json();
       await setRoomsData(roomsDetails);
       setShowRooms(true);
