@@ -18,7 +18,7 @@ const BookingDetails = ({ range, chosenRoom, data }) => {
       }),
     };
     async function Booking() {
-      const response = await fetch('http://62.171.156.155/danylo_ko/api/api.py', requestOptions);
+      const response = await fetch('link.com', requestOptions);
       const bookingData = await response.json();
       if (bookingData.error) {
         alert('Не вдалося забронювати номер. Перевірте правильність введених даних.');
